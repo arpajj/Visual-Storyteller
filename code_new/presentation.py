@@ -2,12 +2,8 @@ from transformers import BartForConditionalGeneration, BartTokenizer
 import torch, os
 import helper as help
 
-# LOCALLY
-#WEIGHTS_PATH_CC = "C:/Users/yugio/OneDrive/Desktop/ThesisUU/pretrained_models/MSCOCO/Transformer/dii_trO_rn-003.pt" # path from pre-trained in COCO 
-WEIGHTS_PATH_CC = "C:/Users/yugio/OneDrive/Desktop/ThesisUU/pretrained_models/MSCOCO/Transformer/dii_trG_rn-003.pt" # path from pre-trained in COCO 
-WEIGHTS_PATH_BART = 'C:/Users/yugio/OneDrive/Desktop/ThesisUU/Phase_2/trained_models/BART/trained_bart_e9.pt' # path from pre-trained in COCO 
-
-print("LOOOOOOOOOOOOOL XDDDDD")
+WEIGHTS_PATH_CC = "path to where the 'dii_trG_rn-003.pt' file is located in your computer" 
+WEIGHTS_PATH_BART = "path to where the 'trained_bart_e9.pt' file is located in your computer" 
 print("Device used:", help.D.upper())
 
 # Load Vision-to-Caption model
@@ -23,9 +19,7 @@ model.eval()
 print("2) Caption-to-Story Model Loaded Succesfully!")
 
 print("Here goes my story...")
-my_story_path = 'C:/Users/yugio/OneDrive/Desktop/ThesisUU/My_Visual_Story/'
-#my_story_path = 'C:/Users/yugio/OneDrive/Desktop/ThesisUU/Comparisons/'
-#my_story_path = 'C:/Users/yugio/OneDrive/Desktop/ThesisUU/Visual Stories/Visual Story 6/'
+my_story_path = "C:/Users/yugio/OneDrive/Desktop/ThesisUU/My_Visual_Story/"
 
 story_captions = []
 for i, filename in enumerate(os.listdir(my_story_path)): 
@@ -39,10 +33,11 @@ print("Almost there...")
 input_text = ' </s> '.join(story_captions)
 input_ids = tokenizer(input_text, return_tensors="pt").input_ids
 with torch.no_grad():
-    #summary_ids = model.generate(input_ids.to(help.D), max_length=200, early_stopping=False, do_sample=False) ### Greedy search
-    #summary_ids = model.generate(input_ids.to(help.D), max_length=200, num_beams=1, early_stopping=False, do_sample=True) ### multinomial sampling
+    # CHOOSE ANY GENERATION STRATEGY YOU PREFER
+    # summary_ids = model.generate(input_ids.to(help.D), max_length=200, early_stopping=False, do_sample=False) ### Greedy search
+    # summary_ids = model.generate(input_ids.to(help.D), max_length=200, num_beams=1, early_stopping=False, do_sample=True) ### multinomial sampling
     summary_ids = model.generate(input_ids.to(help.D), max_length=200, num_beams=1, early_stopping=False, do_sample=True, top_p=0.9) ### nucleus sampling
-    #summary_ids = model.generate(input_ids.to(help.D), max_length=200, num_beams=5, early_stopping=True) ### beam search
+    # summary_ids = model.generate(input_ids.to(help.D), max_length=200, num_beams=5, early_stopping=True) ### beam search
     story = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
 
 print()
