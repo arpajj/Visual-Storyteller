@@ -2,7 +2,7 @@
 
 #### The model deployed in this project is a chained framework that creates stories for a series of images (task commonly known as Visual Storytelling). In order to do so, this task is dealt as a two-step problem, where first a captioner model creates descriptions for capturing the existential information in the sequence of images and a storyteller uses and reformulates these captions to a semantically enriched and coherent story.  
 
-![My Image](Evaluate/Model_diagram.png)
+![My Image](Images/Model_diagram.png)
 
 # How to Use:
 
@@ -19,5 +19,5 @@ __Step 4__: Make the necessary adjustments (regarding the paths) on the file 'ev
 
 #### Some examples of generated stories are presented below: 
 
-![My Image](Evaluate/Story_example.png)
+![My Image](Images/Story_example.png)
 
