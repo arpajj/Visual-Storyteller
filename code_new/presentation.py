@@ -19,7 +19,7 @@ model.eval()
 print("2) Caption-to-Story Model Loaded Succesfully!")
 
 print("Here goes my story...")
-my_story_path = "C:/Users/yugio/OneDrive/Desktop/ThesisUU/My_Visual_Story/"
+my_story_path = "path to a folder with a story of five images in located in your computer"
 
 story_captions = []
 for i, filename in enumerate(os.listdir(my_story_path)): 
