@@ -10,7 +10,7 @@ import skimage.io as io
 import PIL.Image
 
 USE_BEAM_SEARCH = False
-#ENCODER_TYPE = "ViT-B/32"
+#ENCODER_TYPE = "ViT-B/32" 
 ENCODER_TYPE = "RN50x4"
 is_gpu = True 
 CPU = torch.device("cpu")
