@@ -1,4 +1,8 @@
-# How to Use
+# A Brief summary of the Model:
+
+#### The model deployed in this project is a chained framework that creates stories for a series of images (task commonly known as Visual Storytelling). In order to do so, this task is dealt as a two-step problem, where first a captioner model creates descriptions for capturing the existential information in the sequence of images and a storyteller uses and reformulates these captions to a semantically enriched and coherent story.  
+
+# How to Use:
 
 __Step 1__: Download the 'models_to_use' folder and store somewhere locally (~2GB). 
 
