@@ -16,3 +16,8 @@ __Step 4__: Make the necessary adjustments (regarding the paths) on the file 'pr
 
 
 # Results: 
+
+#### Some examples of generated stories are presented below: 
+
+![My Image](Story_example.png)
+
