@@ -1,6 +1,5 @@
 import torch
 import clip
-import os
 from torch import nn
 import numpy as np
 import torch.nn.functional as nnf
