@@ -6,7 +6,9 @@
 
 # How to Use:
 
-__Step 1__: Download the 'models_to_use' folder and store it locally (~2GB). 
+__Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using `pip install -r requirements.txt`.
+
+__Step 1__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
 
 __Step 2__: Download the files 'helper.py' and 'evaluate.py' from the folder 'Evaluate' and store them locally under the same directory. 
 
