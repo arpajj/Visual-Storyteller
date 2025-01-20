@@ -10,7 +10,7 @@ __Step 1__: Install all the required packages from [the requirements file](./req
 
 __Step 1__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
 
-__Step 2__: Download the files 'helper.py' and 'evaluate.py' from the folder 'Evaluate' and store them locally under the same directory. 
+__Step 2__: Download the files [helper.py](./Evaluate/helper.py) and [evaluate.py](./Evaluate/evaluate.py) from the folder [Evaluate](./Evaluate) and store them locally under the same directory. 
 
 __Step 3__: Create a folder locally with five images of your choice or pull one of the folders present under the folder with name 'Visual Stories'.
 
