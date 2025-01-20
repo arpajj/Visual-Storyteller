@@ -20,10 +20,12 @@ wget https://raw.githubusercontent.com/username/repository/main/Evaluate/helper.
 
 # Download evaluate.py
 wget https://raw.githubusercontent.com/username/repository/main/Evaluate/evaluate.py
+```
 
 __Step 4__: Create a folder locally with five images of your choice or pull one of the folders present under the folder with name 'Visual Stories'.
 
-__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file 'evaluate.py' and run the file. ```
+__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file 'evaluate.py' and run the file.
+
 
 
 # Results: 
