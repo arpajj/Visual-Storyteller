@@ -8,13 +8,22 @@
 
 __Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using `pip install -r requirements.txt`.
 
-__Step 1__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
+__Step 2__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
 
-__Step 2__: Download the files [helper.py](./Evaluate/helper.py) and [evaluate.py](./Evaluate/evaluate.py) from the folder [Evaluate](./Evaluate) and store them locally under the same directory. 
+__Step 3__: Download the files [helper.py](./Evaluate/helper.py) and [evaluate.py](./Evaluate/evaluate.py) from the folder [Evaluate](./Evaluate) and store them locally under the same directory. 
 
-__Step 3__: Create a folder locally with five images of your choice or pull one of the folders present under the folder with name 'Visual Stories'.
+Alternatively, use the following commands to download them directly:
 
-__Step 4__: Make the necessary adjustments (regarding the models/images paths) on the file 'evaluate.py' and run the file. 
+```bash
+# Download helper.py
+wget https://raw.githubusercontent.com/username/repository/main/Evaluate/helper.py
+
+# Download evaluate.py
+wget https://raw.githubusercontent.com/username/repository/main/Evaluate/evaluate.py
+
+__Step 4__: Create a folder locally with five images of your choice or pull one of the folders present under the folder with name 'Visual Stories'.
+
+__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file 'evaluate.py' and run the file. ```
 
 
 # Results: 
