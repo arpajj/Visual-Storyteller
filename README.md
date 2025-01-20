@@ -10,26 +10,25 @@ __Step 1__: Install all the required packages from [the requirements file](./req
 
 __Step 2__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
 
-__Step 3__: Download the files [helper.py](./Evaluate/helper.py) and [evaluate.py](./Evaluate/evaluate.py) from the folder [Evaluate](./Evaluate) and store them locally under the same directory. 
+__Step 3__: Download the files [helper.py](./Evaluation/helper.py) and [evaluate.py](./Evaluation/evaluate.py) from the folder [Evaluate](./Evaluation) and store them locally under the same directory. 
 
 Alternatively, use the following commands to download them directly:
 
 ```bash
 # Download helper.py
-wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/helper.py
+wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluation/helper.py
 # or
-curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/helper.py
+curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluation/helper.py
 
 # Download evaluate.py
-wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/evaluate.py
+wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluation/evaluate.py
 # or
-curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/evaluate.py
+curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluation/evaluate.py
 ```
 
-__Step 4__: Create a folder locally with five images of your choice or pull one of the folders present under the folder with name 'Visual Stories'.
+__Step 4__: Create a folder locally with five images of your choice or pull one of the sub-folders present under the folder [Visual Stories](./Visual_Stories).
 
-__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file 'evaluate.py' and run the file.
-
+__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file [evaluate.py](./Evaluation/evaluate/py) and run the file.
 
 
 # Results: 
