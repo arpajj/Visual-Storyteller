@@ -17,9 +17,13 @@ Alternatively, use the following commands to download them directly:
 ```bash
 # Download helper.py
 wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/helper.py
+# or
+curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/helper.py
 
 # Download evaluate.py
 wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/evaluate.py
+# or
+curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluate/evaluate.py
 ```
 
 __Step 4__: Create a folder locally with five images of your choice or pull one of the folders present under the folder with name 'Visual Stories'.
