@@ -11,15 +11,7 @@ If you want to explore the code files you can clone the whole repository, by jus
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
 However, if you are interested only in testing the framework, most of the directories will not be useful. 
-In this case, you can execute just the following steps <span style="color:red">some *blue* text</span>.
-
-
-<span style="color:red">This text is red</span>
-<span style="color:blue">This text is blue</span>
-
-<span style="color:red"> 
-highly recommended 
-</span>
+In this case, you can execute just the following steps (highly recommended ✅): 
 
 __Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
 
