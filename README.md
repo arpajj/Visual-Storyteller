@@ -13,11 +13,13 @@ git clone https://github.com/arpajj/Visual-Storyteller.git
 However, if you are interested only in testing the framework, most of the directories will not be useful. 
 In this case, you can execute just the following steps 
 
-<span style="color:red"> highly recommended </span>
+<span style="color:red"> 
+highly recommended 
+</span>
 
 __Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
 
-__Step 2__: You should download the frameworks weights from here (~2GB). Preferably store them under the same directory.
+__Step 2__: You should download the frameworks weights from here (~2GB). Preferably, store them under the same directory.
 
 __Step 3__: Download the files [helper.py](./Evaluation/helper.py) and [evaluate.py](./Evaluation/evaluate.py) from the folder [Evaluation](./Evaluation) and store them locally under the same directory. 
 
