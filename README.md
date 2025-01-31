@@ -14,6 +14,9 @@ However, if you are interested only in testing the framework, most of the direct
 In this case, you can execute just the following steps <span style="color:red">some *blue* text</span>.
 
 
+<span style="color:red">This text is red</span>
+<span style="color:blue">This text is blue</span>
+
 <span style="color:red"> 
 highly recommended 
 </span>
