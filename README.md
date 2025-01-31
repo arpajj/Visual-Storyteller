@@ -13,7 +13,7 @@ git clone https://github.com/arpajj/Visual-Storyteller.git
 However, if you are interested only in testing the framework, most of the directories will not be useful. 
 In this case, you can execute just the following steps 
 
-(<span style="color:red"> _highly recommended_ </span>):
+<span style="color:red"> highly recommended </span>
 
 __Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
 
