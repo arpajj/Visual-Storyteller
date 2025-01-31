@@ -34,7 +34,16 @@ wget https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluation
 curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluation/evaluate.py
 ```
 
-__Step 4__: Create a folder locally with five images of your choice or pull one of the sub-folders present under the folder [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories).
+__Step 4__: Create a folder locally with five images of your choice or pull one of the sub-folders present under the folder [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories). To pull one of the sub-folders from the present repository follow the steps below, for partially cloning only a selected sub-folder:
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/arpajj/Visual-Storyteller.git
+cd Visual-Storyteller
+git sparse-checkout set "Visual Stories/Visual Story X"
+
+```
+
+'X' is the number of the subfolder you want to download. Check inside [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories).
 
 __Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file [evaluate.py](./Evaluation/evaluate.py) and run the file by executing `python evaluate.py`.
 
