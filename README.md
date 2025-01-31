@@ -10,6 +10,11 @@ __Step 1__: Install all the required packages from [the requirements file](./req
 
 __Step 2__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
 
+Alternatively, you can also clone the whole repository (it's not that much bigger in size), by executing: 
+```bash 
+git clone https://github.com/arpajj/Visual-Storyteller.git
+```
+
 __Step 3__: Download the files [helper.py](./Evaluation/helper.py) and [evaluate.py](./Evaluation/evaluate.py) from the folder [Evaluation](./Evaluation) and store them locally under the same directory. 
 
 Alternatively, use the following commands to download them directly:
