@@ -6,12 +6,13 @@
 
 # How to Use:
 
-If you want to explore the code files you can clone the whole repository, by just executing: 
+If you want to explore the code files and, in general, the whole project you can clone the repository, by executing: 
 ```bash 
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
-However, if you are interested only in testing the framework, most of the directories will not be useful. 
-In this case, you can execute just the following steps (highly recommended ✅): 
+
+However, if you are only interested in testing the framework on inference time (eg. generating a story for you), most of the directories will not be useful. 
+In this case, you can just the follow the steps below (_highly recommended_ ✅): 
 
 __Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
 
