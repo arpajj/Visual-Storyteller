@@ -48,7 +48,6 @@ __Step 4__: Create a folder locally with five images of your choice or pull one 
 git clone --depth 1 --filter=blob:none --sparse https://github.com/arpajj/Visual-Storyteller.git
 cd Visual-Storyteller
 git sparse-checkout set "Visual Stories/Visual Story X"
-
 ```
 
 In the third command 'X' is the number of the subfolder you want to download. Check inside the [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories) folder: there are 18 different options.
