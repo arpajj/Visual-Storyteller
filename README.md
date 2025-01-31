@@ -6,14 +6,16 @@
 
 # How to Use:
 
-__Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using `pip install -r requirements.txt`.
-
-__Step 2__: Download the [models_to_use](./models_to_use) folder and store it locally (~2GB). 
-
-Alternatively, you can also clone the whole repository (it's not that much bigger in size), by executing: 
+If you want to explore the code files you can clone the whole repository, by just executing: 
 ```bash 
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
+However, if you are interested only in testing the framework, most of the directories will not be useful. 
+In this case, you can execute just the following steps (_highly recommended_).
+
+__Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
+
+__Step 2__: You should download the frameworks weights from here (~2GB). Store them under a directory named `models_to_use`.
 
 __Step 3__: Download the files [helper.py](./Evaluation/helper.py) and [evaluate.py](./Evaluation/evaluate.py) from the folder [Evaluation](./Evaluation) and store them locally under the same directory. 
 
@@ -33,7 +35,7 @@ curl -O https://raw.githubusercontent.com/arpajj/Visual-Storyteller/main/Evaluat
 
 __Step 4__: Create a folder locally with five images of your choice or pull one of the sub-folders present under the folder [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories).
 
-__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file [evaluate.py](./Evaluation/evaluate.py) and run the file.
+__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file [evaluate.py](./Evaluation/evaluate.py) and run the file by executing `python evaluate.py`.
 
 
 # Results: 
