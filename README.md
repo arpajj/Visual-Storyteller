@@ -61,3 +61,6 @@ __Step 5__: Make the necessary adjustments (regarding the models/images paths) o
 
 ![My Image](Images/Story_example.png)
 
+![My Image](Images/Story_example_2.png)
+
+
