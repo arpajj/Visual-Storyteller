@@ -43,9 +43,9 @@ git sparse-checkout set "Visual Stories/Visual Story X"
 
 ```
 
-'X' is the number of the subfolder you want to download. Check inside [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories).
+'X' is the number of the subfolder you want to download. Check inside the [Visual Stories](https://github.com/arpajj/Visual-Storyteller/tree/main/Visual%20Stories) folder: there are 18 different options.
 
-__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file [evaluate.py](./Evaluation/evaluate.py) and run the file by executing `python evaluate.py`.
+__Step 5__: Make the necessary adjustments (regarding the models/images paths) on the file [evaluate.py](./Evaluation/evaluate.py) and run the file by executing: `python evaluate.py`.
 
 
 # Results: 
