@@ -2,6 +2,7 @@ from transformers import BartForConditionalGeneration, BartTokenizer
 import torch, os
 import helper as help
 
+# CHANGE THE FOLLOWING PATHS
 WEIGHTS_PATH_CC = "path to where the 'dii_trG_rn-003.pt' file is located in your computer" 
 WEIGHTS_PATH_BART = "path to where the 'trained_bart_e9.pt' file is located in your computer" 
 print("Device used:", help.D.upper())
@@ -19,7 +20,9 @@ model.eval()
 print("2) Caption-to-Story Model Loaded Succesfully!")
 
 print("Here goes my story...")
-my_story_path = "path to a folder with a story of five images in located in your computer"
+
+### CHANGE THE FOLLOWING PATH
+my_story_path = "path to a folder with a story of five images located in your computer"
 
 story_captions = []
 for i, filename in enumerate(os.listdir(my_story_path)): 
