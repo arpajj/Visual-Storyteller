@@ -17,6 +17,10 @@ In this case, you can execute just the following steps
 highly recommended 
 </span>
 
+<span style="color:red">
+Text content
+</span>
+
 __Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
 
 __Step 2__: You should download the frameworks weights from here (~2GB). Preferably, store them under the same directory.
