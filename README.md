@@ -14,7 +14,7 @@ git clone https://github.com/arpajj/Visual-Storyteller.git
 However, if you are only interested in testing the framework on inference time (eg. generating a story for you), most of the directories will not be useful. 
 In this case, you can just the follow the steps below (_highly recommended_ ✅): 
 
-__Step 1__: Install all the required packages from [the requirements file](./requirements.txt) using: `pip install -r requirements.txt`.
+__Step 1__: Download and install all the required packages from [the requirements file](./requirements.txt) by using: `pip install -r requirements.txt`.
 
 __Step 2__: You should download the frameworks weights from here (~2GB). Preferably, store them under the same directory.
 
