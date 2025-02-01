@@ -16,19 +16,12 @@ In this case, you can just the follow the steps below (_highly recommended_ ✅)
 
 __Step 1__: Download and install all the required packages from [the requirements file](./requirements.txt) by using: `pip install -r requirements.txt`.
 
-__Step 2__: Download the framework's weights from 🔗 [HERE](https://drive.google.com/drive/folders/1PJ65Y_VKar-HQDIHFr4aePVQWU8twZsL?usp=drive_link) (size: ~2GB). 
+__Step 2__: Download the framework's weights from the given link 🔗 [HERE](https://drive.google.com/drive/folders/1PJ65Y_VKar-HQDIHFr4aePVQWU8twZsL?usp=drive_link) (size: ~2GB). 
 Preferably, store them under the same directory.
 
 __Step 3__: Download the files [helper.py](./Evaluation/helper.py) and [evaluate.py](./Evaluation/evaluate.py) from the folder [Evaluation](./Evaluation) and store them locally under the same directory. 
 
 Alternatively, use the following commands to download them directly:
-
-
-## Model Weights
-
-You can download the model weights from the following link:
-
-
 
 ```bash
 # Download helper.py
