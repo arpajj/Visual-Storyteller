@@ -10,6 +10,7 @@ If you want to explore the code files and, in general, the whole project you can
 ```bash 
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
+## Inference Usage: 
 
 However, its _highly recommended_ ✅ that you use the framework only on inference time (eg. generating a story for you), since for training the model(s), a lot of resources are required (GPU and storage memory for the VIST dataset). To that, if you are only interested in testing the framework, most of the directories will not be useful (especially the code-flies in [code_new](./code_new) folder).
 
