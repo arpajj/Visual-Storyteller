@@ -11,8 +11,9 @@ If you want to explore the code files and, in general, the whole project you can
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
 
-However, if you are only interested in testing the framework on inference time (eg. generating a story for you), most of the directories will not be useful. 
-In this case, you can just the follow the steps below (_highly recommended_ ✅): 
+However, its _highly recommended_ ✅ that you use the framework only on inference time (eg. generating a story for you), since for training the model(s) a lot of resources are required (GPU and storage memory for the VIST dataset). To that, if you are only interested in testing the framework, most of the directories will not be useful (especially the code-flies in [code_new](./code_new)).
+
+#### To that end, for using the pipeline for Inference time you can follow the steps below : 
 
 __Step 1__: Download and install all the required packages from [the requirements file](./requirements.txt) by using: `pip install -r requirements.txt`.
 
