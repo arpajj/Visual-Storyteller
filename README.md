@@ -51,7 +51,7 @@ __Step 5__: Make the necessary adjustments (regarding the models/images paths) o
 
 # Results: 
 
-#### Some examples of generated stories are presented below: 
+#### Some examples of generated stories (in inferrence time) are presented below: 
 
 ![My Image](Images/Story_example.png)
 
