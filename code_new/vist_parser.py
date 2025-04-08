@@ -12,12 +12,9 @@ def main(clip_model_type):
     #device = torch.device('cuda:0')
     device = "cuda" if torch.cuda.is_available() else "cpu"
     clip_model_name = clip_model_type.replace('/', '_')
-    #out_path = f"/data/admitosstorage/CLIP_image_embeddings/train_10.pkl"
-    out_path = f"/data/admitosstorage/CLIP_image_embeddings/val_vit.pkl" # train_v3, val_v3 --> ResNet on DII, train_v2, val --> ViT on SIS-DII
+    out_path = f"path to your .pkl file where you would like to store the CLIP embeddings of for Train, Validation, Test sets of VIST. See example below"
+    # out_path = f"/data/admitosstorage/CLIP_image_embeddings/val_vit.pkl" 
     clip_model, preprocess = clip.load(clip_model_type, device=device, jit=False)
-    #path_to_dii_sis = '/data/admitosstorage/DII-SIS/dii_sis_train_annots.json'
-    # with open(path_to_dii_sis, 'r', encoding='utf-8') as f:
-    #     data = json.load(f)
     path_to_dii = '/data/admitosstorage/DII-annotation/val.description-in-isolation.json'
     with open(path_to_dii, 'r', encoding='utf-8') as f:
         data = json.load(f)['annotations']
@@ -27,10 +24,8 @@ def main(clip_model_type):
     all_captions = []
     q = 0
     for i in tqdm(range(len(data))):
-    #for i in range(len(data)):
         dictionary = data[i][0]
         photo_id = dictionary["photo_flickr_id"]
-        #filename = f"/data/admitosstorage/yingjin_images/{int(photo_id)}.jpg"
         filename = f"/data/admitosstorage/val_images/{int(photo_id)}.jpg"
         if not os.path.isfile(filename):
             print("No File Found")
@@ -59,15 +54,15 @@ def main(clip_model_type):
 
 
 if __name__ == '__main__':
-    print(f"Choose the type of the CLIP encoder from the following choices: ['RN50', 'RN101', 'RN50x4', 'ViT-B/32']")
-    x = input()
-    if x not in  ['RN50', 'RN101', 'RN50x4', 'ViT-B/32']:
-        x = 'ViT-B/32'
-    print("The type of CLIP encoder is: ", x)
-    #parser = argparse.ArgumentParser()
-    #parser.add_argument('--clip_model_type', default="ViT-B/32", choices=('RN50', 'RN101', 'RN50x4', 'ViT-B/32'))
-    #args = parser.parse_args()
-    #exit(main(args.clip_model_type))
-    exit(main(x))
+    # print(f"Choose the type of the CLIP encoder from the following choices: ['RN50', 'RN101', 'RN50x4', 'ViT-B/32']")
+    # x = input()
+    # if x not in  ['RN50', 'RN101', 'RN50x4', 'ViT-B/32']:
+    #     x = 'ViT-B/32'
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--clip_model_type', default="ViT-B/32", choices=('RN50', 'RN101', 'RN50x4', 'ViT-B/32'))
+    args = parser.parse_args()
+    print("The type of CLIP encoder is: ", args.clip_model_type)
+    exit(main(args.clip_model_type))
+    #exit(main(x))
 
 
