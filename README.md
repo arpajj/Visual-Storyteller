@@ -28,7 +28,9 @@ __Step 3__: Train/Fine-tune the Captioner. There are four different alternatives
 You can respectively train in those ways as follows:
 ```bash
 python train.py --only_prefix
-python train.py 
+python train.py
+python train.py --only_prefix --mapping_type transformer
+python train.py --mapping_type transformer
 ```
 
 ## Inference Usage: 
