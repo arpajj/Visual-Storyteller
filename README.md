@@ -11,7 +11,12 @@ If you want to explore the code files and, in general, the whole project you can
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
 ## Training Usage:
-Step 1: Download the VIST dataset content from [HERE](https://visionandlanguage.net/VIST/dataset.html)
+__Step 1__: Download the VIST dataset content from [HERE](https://visionandlanguage.net/VIST/dataset.html)
+
+__Step 2__: Extract the CLIP features for each set (Train, Val, Test):
+```bash
+python vist_parser.py --clip_model_type ViT-B/32 (or RN50x4)
+```
 
 ## Inference Usage: 
 
