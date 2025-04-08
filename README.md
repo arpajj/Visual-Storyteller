@@ -19,7 +19,11 @@ python vist_parser.py --clip_model_type ViT-B/32 (or RN50x4)
 ```
 The saved CLIP embeddings from Step 2, will be used for training the Captioner model (Clip-Cap)
 
-__Step 3__:
+__Step 3__: Train/Fine-tune the Captioner. There are four different alternatives for fine-tuning: \\
+1) Train with MLP mapping network and no fine-tune of the GPT2 generator.
+2) Train with MLP mapping network and fine-tune of the GPT2 generator.
+3) Train with Transformer mapping network and no fine-tune of the GPT2 generator.
+4) Train with Transformer mapping network and fine-tune of the GPT2 generator.
 
 ## Inference Usage: 
 
