@@ -10,12 +10,13 @@ from PIL import Image
 
 def main(clip_model_type):
     #device = torch.device('cuda:0')
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if torch.cuda.is_available() else "cpu" 
     clip_model_name = clip_model_type.replace('/', '_')
     out_path = f"path to your .pkl file where you would like to store the CLIP embeddings of for Train, Validation, Test sets of VIST. See example below"
     # out_path = f"/data/admitosstorage/CLIP_image_embeddings/val_vit.pkl" 
     clip_model, preprocess = clip.load(clip_model_type, device=device, jit=False)
-    path_to_dii = '/data/admitosstorage/DII-annotation/val.description-in-isolation.json'
+    path_to_dii f"path to where you have stored the DII annotatations from VIST dataset. Respectively for Train, Val, Test. See the example below" 
+    #path_to_dii = '/data/admitosstorage/DII-annotation/val.description-in-isolation.json'
     with open(path_to_dii, 'r', encoding='utf-8') as f:
         data = json.load(f)['annotations']
         
@@ -26,7 +27,8 @@ def main(clip_model_type):
     for i in tqdm(range(len(data))):
         dictionary = data[i][0]
         photo_id = dictionary["photo_flickr_id"]
-        filename = f"/data/admitosstorage/val_images/{int(photo_id)}.jpg"
+        filename = f"path to where you have stored the actual images of VIST for each set (Train, Val, Test) respectively. See example below"
+        #filename = f"/data/admitosstorage/val_images/{int(photo_id)}.jpg"
         if not os.path.isfile(filename):
             print("No File Found")
             continue
