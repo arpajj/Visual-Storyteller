@@ -17,6 +17,9 @@ __Step 2__: Extract the CLIP features for each set (Train, Val, Test):
 ```bash
 python vist_parser.py --clip_model_type ViT-B/32 (or RN50x4)
 ```
+The saved CLIP embeddings from Step 2, will be used for training the Captioner model (Clip-Cap)
+
+__Step 3__:
 
 ## Inference Usage: 
 
