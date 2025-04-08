@@ -33,7 +33,13 @@ python train.py --only_prefix --mapping_type transformer
 python train.py --mapping_type transformer
 ```
 __Step 4__: Prepare the Story-in-Sequence (SIS - see the VIST dataset link from Step 1) data for training the Storyteller. \
-Firstly, download and store the files with names: `train_dataset_all_v1.json` (you can find it by clicking [HERE](https://drive.google.com/drive/folders/1PJ65Y_VKar-HQDIHFr4aePVQWU8twZsL?usp=drive_link)), `val_dataset_all_v1.json`, `test_dataset_all_v1.json` (these two are uploaded here in the Repo). 
+Firstly, download and store the files with names: `train_dataset_all_v1.json` (you can find it by clicking [HERE](https://drive.google.com/drive/folders/1PJ65Y_VKar-HQDIHFr4aePVQWU8twZsL?usp=drive_link)), `val_dataset_all_v1.json`, `test_dataset_all_v1.json` (these two are uploaded here in the Repo). \
+Secondly, explore the notebook [BART_pre-process_data](./BART_pre-process_data.ipynb) (till the point 'Use pre-trained BART for story generation') to understand how we should stracture the input data for the story generation phase. You can adjust the manipulations of this notebook in case you have chosen to run the training procedure from-scratch. After running successfully this notebook the BART storyteller is ready to be trained.
+
+__Step 5__: As the data are properly stored from the previous step, you can train the BART storyteller by executing (fix the paths of your stored data in the running script): \
+```bash
+python BART_runner.py
+```
 
 ## Inference Usage: 
 
