@@ -40,14 +40,13 @@ __Step 5__: As the data are properly stored from the previous step, you can trai
 ```bash
 python BART_runner.py
 ```
-__Step 6__: You can return to the notebook [BART_pre-process_data](./BART_pre-process_data.ipynb) (_after the point 'Use pre-trained BART for story generation'_) for testing you saved (trained) BART version on story generation. 
+__Step 6__: You can return to the notebook [BART_pre-process_data](./code_new/BART_pre-process_data.ipynb) (_after the point 'Use pre-trained BART for story generation'_) for testing you saved (trained) BART version on story generation. 
 
-__Step 7__: Store the file `final_strs_caps_match_test.json` somewhere locally. Change the respective path in the file [ultimate_phase.py](./ultimate_phase.py) and run:
+__Step 7__: Store the file `final_strs_caps_match_test.json` somewhere locally. Change the respective path in the file [ultimate_phase.py](./code_new/ultimate_phase.py) and run:
 ```bash
 python ultimate_phase.py
 ```
 Now you have the generated stories on the test set by your own fully trained (from-scratch) pipeline. Well Done‼️ 
-
 
 ## Inference Usage: 
 
