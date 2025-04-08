@@ -20,9 +20,7 @@ class MappingType():
     MLP = 'mlp'
     Transformer = 'transformer'
 
-
 class ClipVistDataset(Dataset):
-
     def __init__(self, data_path: str,  prefix_length: int, split: str, gpt2_type: str="gpt2", normalize_prefix=False):
         self.tokenizer = GPT2Tokenizer.from_pretrained(gpt2_type)
         self.prefix_length = prefix_length
@@ -273,6 +271,7 @@ class ClipCaptionPrefix(ClipCaptionModel):
 #     with open(out_path, 'w') as outfile:
 #         json.dump(config, outfile)
 
+### This function can be utilized if we want to fine-tune the models that were pre-trained in MSCOCO dataset. 
 # def load_model(config_path: str, epoch_or_latest: Union[str, int] = '_latest'):
 
 #     with open(config_path) as f:
@@ -407,8 +406,8 @@ def train(train_dataset: ClipVistDataset, val_dataset: ClipVistDataset, model: C
         average_train_loss_per_epoch.append(avg_train_loss)
         break
         
-        # if epoch % args.save_every == 0 or epoch == epochs - 1:
-        #     torch.save(model.state_dict(), os.path.join(output_dir, f"{output_prefix}-{epoch:03d}.pt"))
+        if epoch % args.save_every == 0 or epoch == epochs - 1:
+             torch.save(model.state_dict(), os.path.join(output_dir, f"{output_prefix}-{epoch:03d}.pt"))
 
         # ---------------------------------------- Validation phase --------------------------------------------
         model.eval()
@@ -435,9 +434,12 @@ def train(train_dataset: ClipVistDataset, val_dataset: ClipVistDataset, model: C
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train_data', default='C:/Users/admitos/Desktop/ThesisUU/CLIP_image_embeddings/all_train_resnet.pkl') # train_v2, val --> ViT on SIS-DII (512)
-    parser.add_argument('--val_data', default='C:/Users/admitos/Desktop/ThesisUU/CLIP_image_embeddings/val_resnet.pkl')  # train_v3, val_v3 --> ResNet on DII (640), 
-    parser.add_argument('--out_dir', default='C:/Users/admitos/Desktop/ThesisUU/pretrained_models/Transformer_prefix_GPT/') # models trained from scracth on VIST - then reused
+    parser.add_argument('--train_data', default='path to where you have stored the training CLIP embeddings after running the vist_parser.py. Example below') 
+    # parser.add_argument('--train_data', default='C:/Users/admitos/Desktop/ThesisUU/CLIP_image_embeddings/all_train_resnet.pkl') 
+    parser.add_argument('--val_data', default='path to where you have stored the validation CLIP embeddings after running the vist_parser.py. Example below')
+    # parser.add_argument('--val_data', default='C:/Users/admitos/Desktop/ThesisUU/CLIP_image_embeddings/val_resnet.pkl')   
+    parser.add_argument('--out_dir', default='path to where you would like to store the trained models. Its reccomended to be stored by type. Example below')
+    #parser.add_argument('--out_dir', default='C:/Users/admitos/Desktop/ThesisUU/pretrained_models/Transformer_prefix_GPT/') # models trained from scracth on VIST - then reused
     #parser.add_argument('--out_dir', default='/home/apassadaki/data/admitosstorage/pretrained_models/MSCOCO/MLP/') # Pretrained models from MSCOCO
     parser.add_argument('--prefix', default='diiv2_prefix', help='prefix for saved filenames')
     parser.add_argument('--epochs', type=int, default=10)
@@ -458,10 +460,7 @@ def main():
     print("The length of the train dataset is: ", len(train_dataset))
     val_dataset = ClipVistDataset(args.val_data, prefix_length, 'validation' , normalize_prefix=args.normalize_prefix)
     print("The length of the validation dataset is: ", len(val_dataset))    
-    # for item in train_dataset:
-    #     print(type(item))
-    #     break
-    
+
     prefix_dim = 640 if args.is_rn else 512 # 640 is the embedding dim for ResNet and 512 is for ViT
     print("The prefix size is: ", prefix_dim)
     args.mapping_type = {'mlp': MappingType.MLP, 'transformer': MappingType.Transformer}[args.mapping_type]
@@ -480,9 +479,8 @@ def main():
             print("The trainable parameters of the model are: ", count_parameters(model))
             sys.stdout.flush()
 
-    #return 0
     model, average_train_losses, average_validation_losses = train(train_dataset, val_dataset, model, args, output_dir=args.out_dir, output_prefix=args.prefix)
-    return 0 
+    #return 0 
     plot_losses(average_train_losses, average_validation_losses)
 
 if __name__ == '__main__':
