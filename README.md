@@ -33,7 +33,7 @@ python train.py --only_prefix --mapping_type transformer
 python train.py --mapping_type transformer
 ```
 __Step 4__: Prepare the Story-in-Sequence (SIS - see the VIST dataset link from Step 1) data for training the Storyteller. \
-Firstly, download and store the files with names: `train_dataset_all_v1.json` (you can find it by clicking [HERE](https://drive.google.com/drive/folders/1PJ65Y_VKar-HQDIHFr4aePVQWU8twZsL?usp=drive_link), `val_dataset_all_v1.json`, `test_dataset_all_v1.json` (these two are uploaded here in the Repo). 
+Firstly, download and store the files with names: `train_dataset_all_v1.json` (you can find it by clicking [HERE](https://drive.google.com/drive/folders/1PJ65Y_VKar-HQDIHFr4aePVQWU8twZsL?usp=drive_link)), `val_dataset_all_v1.json`, `test_dataset_all_v1.json` (these two are uploaded here in the Repo). 
 
 ## Inference Usage: 
 
