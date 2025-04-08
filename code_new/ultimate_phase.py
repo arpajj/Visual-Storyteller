@@ -1,4 +1,3 @@
-"""UUUULLLTIMATEEEEE PHASSEEEEE """
 from transformers import BartForConditionalGeneration, BartTokenizer
 import torch, json
 import clip
@@ -11,13 +10,10 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel#
 import skimage.io as io
 import PIL.Image
 
-# mathcing_path_train = '/data/admitosstorage/Phase_2/data_phase2/final_strs_caps_match_train.json'
-# mathcing_path_val = '/data/admitosstorage/Phase_2/data_phase2/final_strs_caps_match_val.json'
-# mathcing_path_test = '/data/admitosstorage/Phase_2/data_phase2/final_strs_caps_match_test.json'
-
-mathcing_path_train = 'C:/Users/admitos/Desktop/ThesisUU/Phase_2/data_phase2/final_strs_caps_match_train.json'
-mathcing_path_val = 'C:/Users/admitos/Desktop/ThesisUU/Phase_2/data_phase2/final_strs_caps_match_val.json'
-mathcing_path_test_new = 'C:/Users/admitos/Desktop/ThesisUU/Phase_2/data_phase2/final_strs_caps_match_test_new.json'
+mathcing_path_train = "path to the file 'final_strs_caps_match_train.json'. See example below"
+# mathcing_path_train = 'C:/Users/admitos/Desktop/ThesisUU/Phase_2/data_phase2/final_strs_caps_match_train.json'
+mathcing_path_val = "path to the 'final_strs_caps_match_val.json' file."
+mathcing_path_test_new = "path to the 'final_strs_caps_match_test_new.json' file."
 
 with open(mathcing_path_train, 'r', encoding='utf-8') as f:
     matching_dict_train = json.load(f)
@@ -28,20 +24,15 @@ with open(mathcing_path_val, 'r', encoding='utf-8') as f:
 with open(mathcing_path_test_new, 'r', encoding='utf-8') as f:
     matching_dict_test = json.load(f)
 
-# FROM THE SERVER
-# WEIGHTS_PATH1 = "/home/apassadaki/data/admitosstorage/pretrained_models/MSCOCO/MLP/dii_mlpO_vit-001.pt" # path from pre-trained in COCO  <----- 1st pick for ultimate phase 
-# #WEIGHTS_PATH2 = "/home/apassadaki/data/admitosstorage/pretrained_models/MSCOCO/MLP/dii_mlpG_vit-001.pt" # path from pre-trained in COCO  <----- 2nd pick for ultimate phase 
+WEIGHTS_PATH = "path to your captioner saved model it must be a '.pt' file. See example below"
+# WEIGHTS_PATH = "C:/Users/admitos/Desktop/ThesisUU/pretrained_models/MSCOCO/MLP/dii_mlpG_vit-002.pt" 
 
-# LOCALLY
-#WEIGHTS_PATH1 = "C:/Users/admitos/Desktop/ThesisUU/pretrained_models/MSCOCO/MLP/dii_mlpO_vit-002.pt" # path from pre-trained in COCO  <----- 1st pick for ultimate phase 
-WEIGHTS_PATH2 = "C:/Users/admitos/Desktop/ThesisUU/pretrained_models/MSCOCO/MLP/dii_mlpG_vit-002.pt" # path from pre-trained in COCO  <----- 2nd pick for ultimate phase 
-
-# IMAGES_PATH = "/home/apassadaki/data/admitosstorage/test_images/"
-IMAGES_PATH = "F:/ThesisUU/test/"
+IMAGES_PATH = "path to your test images"
 
 
 USE_BEAM_SEARCH = False
-ENCODER_TYPE = "ViT-B/32"
+## Encoder type of CLIP. It must me the same as the one that you used in vist_parser.py while getting the embeddings and then trained the captioner.
+ENCODER_TYPE = "ViT-B/32" 
 #ENCODER_TYPE = "RN50x4"
 is_gpu = True 
 CPU = torch.device("cpu")
@@ -255,7 +246,6 @@ def generate2(model, tokenizer, tokens=None, prompt=None, embed=None, entry_coun
     return generated_list[0]
 
 
-
 # Load Vision-to-Caption model
 predictor = Predictor()
 my_clipcap_model = predictor.setup(WEIGHTS_PATH2)
@@ -264,22 +254,15 @@ print("1) Vision-to-Caption Model Loaded Succesfully!")
 # Load Caption-to-Story model
 model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
-# model.load_state_dict(torch.load(f'/data/admitosstorage/Phase_2/trained_models/BART/trained_bart_e11.pt', map_location=D))
-model.load_state_dict(torch.load(f'C:/Users/admitos/Desktop/ThesisUU/Phase_2/trained_models/BART/trained_bart_e3.pt', map_location=D))
+model.load_state_dict(torch.load(f"path to yout trainerd BART storyteller model. It must be a '.pt' file. See example below.", map_location=D))
+#model.load_state_dict(torch.load(f'C:/Users/admitos/Desktop/ThesisUU/Phase_2/trained_models/BART/trained_bart_e3.pt', map_location=D))
 
 model.eval()
 model = model.to(D)
 print("2) Caption-to-Story Model Loaded Succesfully!")
 
-# print(list(matching_dict_test.items())[0])
-# matching_path = f'/data/admitosstorage/Phase_2/results/ultimate_phase/storylines_to_images.pkl' 
-# with open(matching_path, 'wb') as f:
-#     pickle.dump(matching_dict_test, f)
-
 all_generated_stories = {}
 for i, (key,values) in enumerate(matching_dict_test.items()):
-    if i == 0:
-        break
     print("We process image with index:", i)
     story_captions = []
     for img_path in values:
@@ -298,42 +281,12 @@ for i, (key,values) in enumerate(matching_dict_test.items()):
     print(f"On story generation [{i+1}/{len(matching_dict_test)}]")
     
 
-# print("Input Captions: ", story_captions)
-# print("----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
-# print("Generated Story: \n", story)
-# print("----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
-# print("All generated storylines are:", len(all_generated_stories))
-# results_path = f'/data/admitosstorage/Phase_2/results/ultimate_phase/storylines_ClipCap11_BART14.pkl' 
+#print("Input Captions: ", story_captions)
+#print("----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+#print("Generated Story: \n", story)
+#print("----------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+print("All generated storylines are:", len(all_generated_stories))
 
-# with open(results_path, 'wb') as f:
-#     pickle.dump(all_generated_stories, f)
-
-
-
-###################################           PERSONAL STORYLINE           #########################################
-################### ------------------------ HERE GOES MY STORY ----------------------------- ######################
-
-print("Here goes my story")
-#my_story_path = 'C:/Users/admitos/Desktop/ThesisUU/My_Visual_Story/'
-my_story_path = 'C:/Users/admitos/Desktop/ThesisUU/Comparisons/'
-
-story_captions = []
-for filename in os.listdir(my_story_path): 
-    if filename.endswith(".jpg") or filename.endswith(".png"):
-        final_img_path = os.path.join(my_story_path, filename)
-        indiv_cap = predictor.predict(final_img_path, my_clipcap_model, USE_BEAM_SEARCH)
-        story_captions.append(indiv_cap) 
-
-# story_captions = ['A scenic view of Athens under the bright sun.', 'Tourists exploring the ancient ruins of the Acropolis.'
-#                 "The Parthenon stands tall against the clear sky.", 'Photographing the sunset over Athens.', 'Dining with a view of the moonlit Acropolis']
-print(story_captions)
-input_text = ' </s> '.join(story_captions)
-input_ids = tokenizer(input_text, return_tensors="pt").input_ids
-with torch.no_grad():
-    summary_ids = model.generate(input_ids.to(D), max_length=200, num_beams=1, early_stopping=False, do_sample=True, top_p=0.9) ### nucleus sampling
-    #summary_ids = model.generate(input_ids.to(D), max_length=200, num_beams=3, early_stopping=True) ### beam search
-    story = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-all_generated_stories[key] = story
-print()
-print(story)
-
+results_path = f"path to a '.pkl' file where you want to store the final stories." 
+with open(results_path, 'wb') as f:
+    pickle.dump(all_generated_stories, f)
