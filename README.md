@@ -11,7 +11,7 @@ If you want to explore the code files and, in general, the whole project you can
 git clone https://github.com/arpajj/Visual-Storyteller.git
 ```
 ## Training Usage:
-
+Step 1: Download the VIST dataset content from [HERE](https://visionandlanguage.net/VIST/dataset.html)
 
 ## Inference Usage: 
 
