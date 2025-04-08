@@ -13,7 +13,7 @@ import PIL.Image
 mathcing_path_train = "path to the file 'final_strs_caps_match_train.json'. See example below"
 # mathcing_path_train = 'C:/Users/admitos/Desktop/ThesisUU/Phase_2/data_phase2/final_strs_caps_match_train.json'
 mathcing_path_val = "path to the 'final_strs_caps_match_val.json' file."
-mathcing_path_test_new = "path to the 'final_strs_caps_match_test_new.json' file."
+mathcing_path_test_new = "path to the 'final_strs_caps_match_test.json' file."
 
 with open(mathcing_path_train, 'r', encoding='utf-8') as f:
     matching_dict_train = json.load(f)
