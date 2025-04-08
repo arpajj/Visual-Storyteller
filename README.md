@@ -32,6 +32,7 @@ python train.py
 python train.py --only_prefix --mapping_type transformer
 python train.py --mapping_type transformer
 ```
+__Step 4__: Prepare the Story-in-Sequence (SIS - see the VIST dataset link from Step 1) data for training the Storyteller. 
 
 ## Inference Usage: 
 
