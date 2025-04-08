@@ -15,7 +15,7 @@ __Step 1__: Download the VIST dataset content from [HERE](https://visionandlangu
 
 __Step 2__: Extract the CLIP features for each set (Train, Val, Test):
 ```bash
-python vist_parser.py --clip_model_type ViT-B/32 (or RN50x4)
+python vist_parser.py --clip_model_type ViT-B/32 # (or RN50x4)
 ```
 The saved CLIP embeddings from Step 2, will be used for training the Captioner model (Clip-Cap)
 
@@ -24,6 +24,12 @@ __Step 3__: Train/Fine-tune the Captioner. There are four different alternatives
 2) Train with MLP mapping network and fine-tune of the GPT2 generator.
 3) Train with Transformer mapping network and no fine-tune of the GPT2 generator.
 4) Train with Transformer mapping network and fine-tune of the GPT2 generator.
+
+You can respectively train in those ways as follows:
+```bash
+python train.py --only_prefix
+python train.py 
+```
 
 ## Inference Usage: 
 
