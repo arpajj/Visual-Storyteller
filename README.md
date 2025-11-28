@@ -40,7 +40,7 @@ __Step 5__: As the data are properly stored from the previous step, you can trai
 ```bash
 python BART_runner.py
 ```
-__Step 6__: You can return to the notebook [BART_pre-process_data](./code_new/BART_pre-process_data.ipynb) (_after the point 'Use pre-trained BART for story generation'_) for testing you saved (trained) BART version on story generation. 
+__Step 6__: You can return to the notebook [BART_pre-process_data](./code_new/BART_pre-process_data.ipynb) (_after the point 'Use pre-trained BART for story generation'_) for testing your saved (trained) BART version on story generation. 
 
 __Step 7__: Store the file `final_strs_caps_match_test.json` somewhere locally. Change the respective path in the file [ultimate_phase.py](./code_new/ultimate_phase.py) and run:
 ```bash
@@ -50,7 +50,7 @@ Now you have the generated stories on the test set by your own fully trained (fr
 
 ## Inference Usage: 
 
-However, its _highly recommended_ ✅ that you use the framework only on inference time (eg. generating a story for you), since for training the model(s), a lot of resources are required (GPU and storage memory for the VIST dataset). To that, if you are only interested in testing the framework, most of the directories will not be useful (especially the code-flies in [code_new](./code_new) folder).
+However, its _highly recommended_ ✅ that you use the framework only on inference time (eg. generating a story for you), since for training the model(s), a lot of resources are required (GPU and storage memory for the VIST dataset). To that end, if you are only interested in testing the framework, most of the directories will not be useful (especially the code-flies in [code_new](./code_new) folder).
 
 #### In this case, for using the pipeline in Inference time you can follow the steps below : 
 
